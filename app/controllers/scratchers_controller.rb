@@ -1,5 +1,7 @@
 class ScratchersController < ApplicationController
     before_action :set_scratcher, only: [:show, :update, :destroy]
+    before_action :authenticate_user
+    
     def index
         render json: Scratcher.all
     end
